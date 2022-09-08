@@ -1,1 +1,1 @@
-web: gunicorn cookingblog.wsgi
+web: gunicorn cookingblog.wsgi:application
