@@ -3,9 +3,9 @@ from django.views import generic
 from .models import Post
 
 
-class PostList(generic.ListViews):
+class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginated_by = 6
 
