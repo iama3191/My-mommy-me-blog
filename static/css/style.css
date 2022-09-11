@@ -1,9 +1,14 @@
+body {
+    background-color: aqua;
+}
 p {
     font-family: 'Open Sans', sans-serif;
 }
 h1,
 h2,
-h3 {
-    font-family: 'Pacifico', cursive;  
+h3,
+#title-blog {
+    font-family: 'Pacifico', cursive;
+    color: blue;
 }
  
