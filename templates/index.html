@@ -8,12 +8,17 @@
         <div class="col-12 mt-3 left">
             <div class="row">
             {% for post in post_list %}
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width:20%;">
+              {% if "placeholder" in post.featured_image.url %}
+                <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663064458/food_yscosd.jpg" class="card-img-top" alt="...">
+              {% else %}
+                <img src="{{ post.featured_image.url }}"  class="card-img-top" alt="...">
+              {% endif %}
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{ post.title }}</h5>
+                  <p class="card-text"> {{ post.excerpt }}</p>
+                  <p class="author"> Author: {{ post.author }}</p>
+                  <a href="#" class="btn btn-primary">Read more</a>
                 </div>
               </div>
             {% if forloop.counter|divisibleby:3 %}
