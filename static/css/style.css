@@ -1,14 +1,39 @@
-body {
-    background-color: aqua;
-}
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
 h1,
 h2,
 h3,
 #title-blog {
     font-family: 'Pacifico', cursive;
-    color: blue;
 }
  
+main {
+    background-color: coral;
+}
+footer {
+    background-color: bisque;
+}
+
+.social-links a i{
+    width: 30px;
+    height: 30px;
+    padding: 10px 0;
+    font-size: 1.4em;
+    line-height: 15px;
+    text-align: center;
+}
+
+.sr-only {
+    border: none;
+}
+
+.hero-image {
+    background-image: url('https://res.cloudinary.com/irecloudpractice/image/upload/v1663060526/hero-image_c1outr.jpg');
+    height: 450px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
