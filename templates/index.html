@@ -17,16 +17,18 @@
               {% else %}
               <img src="{{ post.featured_image.url }}" class="card-img-top post-img" alt="...">
               {% endif %}
-              <div class="image-flash">
-                <p class="author">Author: {{ post.author }}</p>
-              </div>
             </div>
             <div class="card-body">
               <a href="#" class="post-link">
-                <h3 class="card-title text-center">{{ post.title }}</h5>
+                <h3 class="card-title text-center">{{ post.title }}</h3>
+                <p class="card-text">{{ post.excerpt }}</p>
               </a>
+              <div class="image-flash">
+                <p class="author">Author: {{ post.author }}</p>
+              </div>
               <hr>
-              <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
+              <p class="card-text"><small class="text-muted">{{ post.created_on }} <i class="far fa-heart right"></i> {{ post.number_of_likes }}</small>
+              </p>
             </div>
           </div>
         </div>
