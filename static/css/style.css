@@ -1,3 +1,5 @@
+/* General */
+
 p {
     font-family: 'Open Sans', sans-serif;
 }
@@ -9,10 +11,15 @@ h3,
     font-family: 'Pacifico', cursive;
     font-size: 1.5em;
 }
- 
+
+
+/* Main Section*/
 main {
     background-color: coral;
+    padding: 30px;
 }
+
+/* Footer */
 footer {
     background-color: bisque;
 }
@@ -24,6 +31,7 @@ footer {
     font-size: 1.4em;
     line-height: 15px;
     text-align: center;
+    color: black;
 }
 
 .sr-only {
@@ -37,4 +45,30 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+
+/* Cards section */
+
+.image-flash {
+    min-width: 30%;
+}
+
+.author {
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.post-link {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.image-container {
+    padding: 10px;
+}
+
+.pagination {
+    color: aqua;
 }
