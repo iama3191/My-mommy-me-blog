@@ -8,7 +8,7 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
       <h3>{% trans "Sign In" %}</h3>
 
 <!--This is for 3rd party authentication
@@ -41,7 +41,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8 mt-3 offset-md-2">
+  <div class="col-md-8 mt-3 offset-md-2 text-center">
     <form class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       {{ form.as_p }}
