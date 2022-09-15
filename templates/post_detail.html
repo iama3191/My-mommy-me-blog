@@ -40,5 +40,22 @@
   </div>
   </div>
 </div>
+<div class="row">
+  <h3>Comments</h3><hr>
+</div>
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+  {% for comment in comments %}
+  <div class="card-header">
+    <p class="comment-date">{{ comment.created_on }}</p>
+    <p ><strong>{{ comment.name }}</strong> says:</p>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ comment.body }}</p>
+  </div>
+  <hr>
+</div>
+{% endfor %}
+
+
 
 {% endblock content %}
