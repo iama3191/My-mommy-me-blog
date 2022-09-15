@@ -14,7 +14,7 @@
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
                 {% else %}
-                <img src="" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
           </div>
@@ -50,9 +50,7 @@
     <p ><strong>{{ comment.name }}</strong> says:</p>
   </div>
   <div class="card-body">
-    <p class="card-text">{{ comment.body }}</p>
-  </div>
-  <hr>
+    <p class="card-text">{{ comment.body | linebreaks }}</p>
 </div>
 {% endfor %}
 
