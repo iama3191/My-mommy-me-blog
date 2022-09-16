@@ -4,13 +4,13 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-CATEGORIES = ((0, "Snacks"), (1, "Meals"), (2, "Desserts"))
+CATEGORIES = (("Snacks", "Snacks"), ("Meals", "Meals"), ("Desserts", "Desserts"))
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    category = models.IntegerField(choices=CATEGORIES, default=0)
+    category = models.CharField(max_length=8, choices=CATEGORIES, default="Snacks")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     ingredients = models.TextField()
