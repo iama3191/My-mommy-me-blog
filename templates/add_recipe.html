@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+
+    <!-- Hero  image -->
+    {% block hero %}
+    {% endblock %}
+
+    <!-- Form for adding a new recipe -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Add a new recipe</h2>
+                <form action="." method="POST">
+                    <div class="row">
+                        <div class="col">
+                            {{ recipe_form | crispy | safe }}
+                            {% csrf_token %}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary green-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
