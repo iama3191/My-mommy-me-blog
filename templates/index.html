@@ -6,11 +6,11 @@
   <div class="row">
 
     <!-- Blog entries Column -->
-    <div class="col-12 m-3">
+    <div class="col-12">
       <div class="row">
         {% for post in post_list %}
-        <div class="col-md-4">
-          <div class="card m-4 h-100">
+        <div class="col-md-4 my-4">
+          <div class="card">
             <div class="image-container">
               {% if "placeholder" in post.featured_image.url %}
               <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" class="card-img-top post-img" alt="..." >

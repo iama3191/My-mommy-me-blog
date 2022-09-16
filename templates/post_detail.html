@@ -8,7 +8,7 @@
     <div class="row g-0">
         <div class="row justify-content-center">
             <div class="col-4">
-              {{ post.excerpt }}
+              {{ post.description }}
             </div>
             <div class="col-4">
                 {% if "placeholder" in post.featured_image.url %}
@@ -24,9 +24,10 @@
 <div class="container">
   <div class="row">
     <h3>Ingredients</h3>  
+    <p> {{ post.ingredients | safe }}</p>
   </div>
   <div class="row"><h3>Instructions</h3>
-    {{ post.content | safe }}
+    {{ post.instructions | safe }}
   </div>
   <div class="row">
     <div class="col-1">

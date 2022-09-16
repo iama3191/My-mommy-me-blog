@@ -61,23 +61,15 @@
         </div>
       </nav>
 
-<!-- Hero -->
-<!--Code from: https://mdbootstrap.com/docs/standard/extended/hero/ and modify for my vision-->
-<div class="p-5 text-center hero-image">
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="text-white">
-      <h1 class="mb-3">Heading</h1>
-      <h4 class="mb-3">Subheading</h4>
-      <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
-    </div>
-  </div>
-</div>
-<!-- Hero -->
-    <!-- Body -->
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
+<!-- Hero image content-->
+<div class="hero-image"></div>
 
-        {% endblock %}
+    <!-- Body -->
+    <main class="flex-shrink-0">
+
+      <!--Page contente-->
+      {% block content %}
+      {% endblock %}
     </main>
 
     <!-- Footer -->
@@ -102,6 +94,7 @@
           </div>
           <p class="text-center">Project for Code Institute</p>
         </footer>
+        
     <!-- Bootstrap/ JS with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
