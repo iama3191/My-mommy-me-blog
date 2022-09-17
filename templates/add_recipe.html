@@ -12,15 +12,15 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Add a new recipe</h2>
-                <form action="." method="POST">
+                <h2 class="text-center">Add a new recipe</h2>
+                <form action="." method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
                             {{ recipe_form | crispy | safe }}
                             {% csrf_token %}
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-secondary green-btn">Submit</button>
+                    <button type="submit" class="btn btn-secondary green-btn">Add Recipe</button>
                 </form>
             </div>
         </div>

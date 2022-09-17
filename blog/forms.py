@@ -1,7 +1,7 @@
 """
 Forms
 """
-from django_summernote.widgets import SummernoteInplaceWidget, SummernoteWidget
+from django_summernote.widgets import SummernoteWidget
 from django import forms
 from .models import Comment, Post
 
@@ -17,6 +17,7 @@ class RecipeForm(forms.ModelForm):
         model = Post
         fields = [
             'title',
+            'slug',
             'description',
             'ingredients',
             'instructions',

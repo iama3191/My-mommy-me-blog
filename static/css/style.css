@@ -1,5 +1,9 @@
 /* General */
 
+body {
+    min-height: 100vh;
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
 }
@@ -70,6 +74,7 @@ footer {
 }
 
 
-.pagination {
-    background-color: aqua;
+.site-pagination {
+    border: 1px solid black;
+    height: 100px;
 }
