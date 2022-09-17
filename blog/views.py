@@ -94,3 +94,22 @@ def add_recipe(request):
     else:
         recipe_form = RecipeForm()
     return render(request,'add_recipe.html', context)
+
+
+def update_recipe(request, slug):
+    recipe = get_object_or_404(Post, slug=slug)
+    recipe_form = RecipeForm(request.POST or None, instance=recipe)
+    context = {
+        'recipe_form': recipe_form,
+        'recipe': recipe,
+    }
+    if request.method == "POST":
+        recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+            return redirect('home')
+    else:
+        recipe_form = RecipeForm(instance=recipe)
+    return render(request, "update_recipe.html", context)

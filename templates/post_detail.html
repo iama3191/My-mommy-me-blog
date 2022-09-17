@@ -59,6 +59,9 @@
           {{ total_comments }}</strong>
       {% endwith %}
   </div>
+  <div class="row">
+    <a href="{% url 'update_recipe' post.slug %}"><button class="btn btn-secondary" type="update">Update</button></a>
+  </div>
   </div>
 </div>
 <div class="row">
