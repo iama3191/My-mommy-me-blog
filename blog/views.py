@@ -113,3 +113,9 @@ def update_recipe(request, slug):
     else:
         recipe_form = RecipeForm(instance=recipe)
     return render(request, "update_recipe.html", context)
+
+
+def delete_recipe(request, slug):
+    recipe = Post.objects.get(slug=slug)
+    recipe.delete()
+    return redirect('home')

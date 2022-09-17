@@ -31,8 +31,13 @@
                 <p class="author">Author: {{ post.author }}</p>
               </div>
               <hr>
-              <p class="card-text"><small class="text-muted">{{ post.created_on }} <i class="far fa-heart right"></i> {{ post.number_of_likes }}</small>
-              </p>
+              {% if post.updated_on %}
+                <p class="card-text"><small class="text-muted">{{ post.updated_on }} <i class="far fa-heart right"></i> {{ post.number_of_likes }}</small>
+                </p>
+              {% else %}
+                <p class="card-text"><small class="text-muted">{{ post.created_on }} <i class="far fa-heart right"></i> {{ post.number_of_likes }}</small>
+                </p>
+              {% endif %}
             </div>
           </div>
         </div>

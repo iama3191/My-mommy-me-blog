@@ -59,9 +59,12 @@
           {{ total_comments }}</strong>
       {% endwith %}
   </div>
-  <div class="row">
-    <a href="{% url 'update_recipe' post.slug %}"><button class="btn btn-secondary" type="update">Update</button></a>
-  </div>
+  {% if user.id == post.author.id %}
+    <div class="row d-inline mt-3">
+      <a href="{% url 'update_recipe' post.slug %}"><button class="btn btn-secondary update" type="button">Update</button></a>
+      <a href="{% url 'delete_recipe' post.slug %}"><button class="btn btn-secondary delete" type="button">Delete</button></a>
+    </div>
+  {% endif %}
   </div>
 </div>
 <div class="row">
