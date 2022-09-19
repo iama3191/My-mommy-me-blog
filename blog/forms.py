@@ -27,4 +27,3 @@ class RecipeForm(forms.ModelForm):
             'ingredients': SummernoteWidget(),
             'instructions': SummernoteWidget()
         }
-
