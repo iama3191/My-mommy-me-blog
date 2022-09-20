@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse px-2" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
+                <a class="nav-link" aria-current="page" href="#">About</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
@@ -50,8 +50,8 @@
                 <a class="nav-link" href="{% url 'account_login' %}">Login</a>
               </li>
               {% endif %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_recipe' %}" role="button">Add recipe</a>
+              <li class="nav-item ">
+                <a class="nav-link btn-add-recipe" href="{% url 'add_recipe' %}" role="button">Add recipe</a>
               </li>
             </ul>
           </div>
@@ -63,10 +63,11 @@
 {% endblock %}
 
     <!-- Body -->
-    <main class="flex-grow-1">
+    <main class="flex-shrink-0">
 
-      <!--Page contente-->
+      <!-- Page content -->
       {% block content %}
+
       {% endblock %}
     </main>
 

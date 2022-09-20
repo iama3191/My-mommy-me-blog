@@ -24,6 +24,20 @@ h3 {
     font-size: 1.1em;
 }
 
+.nav-link {
+    color: #000;
+}
+
+.btn-add-recipe {
+    color: #D27560;
+}
+
+.btn-add-recipe:hover {
+    font-weight: bolder;
+    color: #D27560;
+    font-size: 1.1em;
+}
+
 /* Hero image section */
 .hero-image {
     background-image: url('https://res.cloudinary.com/irecloudpractice/image/upload/v1663060526/hero-image_c1outr.jpg');
@@ -61,6 +75,10 @@ footer p {
 }
 
 /* Cards section */
+
+.card {
+    
+}
 
 .card-text {
     font-size: 1.2em;
@@ -100,8 +118,8 @@ footer p {
     border-radius: 15px;
 }
 
-
-.site-pagination {
+/* Site pagination */
+#site-pagination {
     border: 1px solid black;
     height: 100px;
 }
