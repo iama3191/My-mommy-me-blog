@@ -11,7 +11,7 @@ p {
 h1,
 h2,
 h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 /* Navbar */
@@ -61,13 +61,28 @@ footer p {
 }
 
 /* Cards section */
-.image-flash {
-    min-width: 30%;
+
+.card-text {
+    font-size: 1.2em;
+    margin-top: -5px;
+}
+
+.author-flash {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.post-link:hover {
+    color: #D27560;
 }
 
 .author {
-    margin: 4px;
+    margin: 2px;
     text-transform: uppercase;
+    font-size: 0.9em;
+    color: #D27560;
+    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .post-link {
