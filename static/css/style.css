@@ -10,12 +10,19 @@ p {
 
 h1,
 h2,
-h3,
-#title-blog {
+h3 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.5em;
 }
 
+/* Navbar */
+#title-blog {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.8em;
+}
+
+.nav-item {
+    font-size: 1.1em;
+}
 
 /* Hero image section */
 .hero-image {
@@ -29,14 +36,11 @@ h3,
 
 /* Main Section*/
 main {
-    background-color: #f99269;
+    background-color: rgb(210, 117, 96, 0.8);
     padding: 30px;
 }
 
 /* Footer */
-footer {
-    background-color: bisque;
-}
 
 .social-links a i{
     width: 30px;
@@ -46,6 +50,14 @@ footer {
     line-height: 15px;
     text-align: center;
     color: black;
+}
+
+.social-links a i:hover {
+    color: #D27560;
+}
+
+footer p {
+    font-size: 1em;
 }
 
 /* Cards section */
