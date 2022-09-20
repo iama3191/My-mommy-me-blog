@@ -1,18 +1,23 @@
 {% extends "base.html" %} 
 {% block content %}
-
 {% load crispy_forms_tags %}
 
-<div class="container">
+<!-- Blog title -->
+{% block title %}
+  <title>{{ post.title }}| {{ post.author }}</title>
+{% endblock %}
+
+<!-- Recipe Details -->
+<div class="container  recipe-container text-center">
     <h1 class="post-title">{{ post.title }}</h1>
     <small>By: {{ post.author }} | {{ post.created_on }}</small>
     <hr>
     <div class="row g-0">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-4 recipe-detail-desc">
               {{ post.description }}
             </div>
-            <div class="col-4">
+            <div class="col-4 recipe-detail-img">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
                 {% else %}
@@ -23,7 +28,8 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container preparation-container">
+  <hr>
   <div class="row">
     <h3>Ingredients</h3>  
     <p> {{ post.ingredients | safe }}</p>
