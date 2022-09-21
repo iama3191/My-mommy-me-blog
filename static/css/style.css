@@ -125,7 +125,8 @@ footer p {
 
 .recipe-container,
 .preparation-container,
-.comments-container {
+.comments-container,
+.update-container {
     background-color: rgb(248, 249, 250, 0.8);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -205,4 +206,10 @@ i .fa-regular,
     border-color: rgb(210, 117, 96, 0.5);
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(210, 117, 96, 0.5);
+}
+
+.update-container {
+    padding-left: 20px;
+    padding-right: 20px;
+
 }

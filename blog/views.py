@@ -116,6 +116,10 @@ def update_recipe(request, slug):
 
 
 def delete_recipe(request, slug):
-    recipe = Post.objects.get(slug=slug)
+    recipe = get_object_or_404(Post, slug=slug)
     recipe.delete()
     return redirect('home')
+
+
+def about(request):
+    return render(request, "about.html")
