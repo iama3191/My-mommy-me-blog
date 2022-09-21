@@ -8,27 +8,24 @@
 {% endblock %}
 
 <!-- Recipe Details -->
-<div class="container  recipe-container text-center">
-    <h1 class="post-title">{{ post.title }}</h1>
-    <small>By: {{ post.author }} | {{ post.created_on }}</small>
-    <hr>
-    <div class="row g-0">
-        <div class="row justify-content-center">
-            <div class="col-4 recipe-detail-desc">
-              {{ post.description }}
-            </div>
-            <div class="col-4 recipe-detail-img">
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
-          </div>
+<div class="container recipe-container text-center">
+  <h1 class="post-title">{{ post.title }}</h1>
+  <small>By: {{ post.author }} | {{ post.created_on }}</small>
+  <hr>
+  <div class="recipe-summary">
+    <div class="recipe-detail-img">
+      {% if "placeholder" in post.featured_image.url %}
+        <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
+      {% else %}
+        <img src="{{ post.featured_image.url }}" width="100%">
+      {% endif %}
     </div>
+    <div class="recipe-detail-desc">
+      <p>{{ post.description }}</p>
+    </div>
+  </div>
 </div>
-
-<div class="container preparation-container">
+<div class="container preparation-container text-center">
   <hr>
   <div class="row">
     <h3>Ingredients</h3>  
@@ -41,27 +38,27 @@
     <div class="col-1">
       <strong>
         {% if user.is_authenticated %}
-        <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
-          {% csrf_token %}
-          {% if liked %}
-            <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
-              <i class="fas fa-heart"></i> 
-            </button>
-          {% else %}
-            <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
-              <i class="far fa-heart"></i> 
-            </button>
-          {% endif %}
-        </form>
+          <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            {% if liked %}
+              <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            {% else %}
+              <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            {% endif %}
+          </form>
         {% else %}
-        <span class="text-secondary"><i class="far fa-heart"></i></span>
+          <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
         {% endif %}
         <span class="text-secondary">{{ post.number_of_likes }}</span>
       </strong>
   </div>
   <div class="col-1">
       {% with comments.count as total_comments %}
-      <strong class="text-secondary"><i class="far fa-comments"></i>
+      <strong class="text-secondary"><i class="fa-regular fa-comment"></i>
           {{ total_comments }}</strong>
       {% endwith %}
   </div>
@@ -73,37 +70,38 @@
   {% endif %}
   </div>
 </div>
-<div class="row">
-  <h3>Comments</h3><hr>
-</div>
-<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-  {% for comment in comments %}
-  <div class="card-header">
-    <p class="comment-date">{{ comment.created_on }}</p>
-    <p ><strong>{{ comment.name }}</strong> says:</p>
+<div class="container comments-container">
+  <hr><h3 class="mx-2">Comments</h3>
+  <div class="card mb-3 comment-card">
+    {% for comment in comments %}
+    <div class="card-header comment-posted">
+      <p class="comment-date"><small>{{ comment.created_on }}</small></p>
+      <p><strong class="comment-author">{{ comment.name }}</strong> says:</p>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ comment.body | linebreaks }}</p>
+    </div>
+    {% endfor %}
   </div>
-  <div class="card-body">
-    <p class="card-text">{{ comment.body | linebreaks }}</p>
-</div>
-{% endfor %}
-
-<div class="container">
-  <div class="card-body">
-    {% if commented %}
-      <div class="alert alert-success" role="alert">Your comment is posted
-      </div>
-    {% else %}
-    {% if user.is_authenticated %}
-
-      <h3>Leave a comment:</h3>
-      <p>Posting as: {{ user.username }}</p>
-      <form method="post" style="margin-top: 1.3em;">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Post</button>
-      </form>
+  <div class="container">
+    <div class="card-body">
+      {% if commented %}
+        <div class="alert alert-success" role="alert">Your comment is posted
+        </div>
+      {% else %}
+        {% if user.is_authenticated %}
+          <h3>Leave a comment</h3>
+          <p>Commenting as: {{ user.username }}</p>
+          <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <div class="text-center">
+              <button type="submit" class="btn btn-secondary btn-lg comment-btn">Comment</button>
+            </div>
+          </form>
+        {% endif %}
       {% endif %}
-      {% endif %}
+    </div>
   </div>
 </div>
 
