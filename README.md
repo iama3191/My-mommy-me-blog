@@ -1,108 +1,260 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome iama3191,
+# My mommy and me blog
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive display of the blog](path)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[View the live project here](https://my-mommy-and-me.herokuapp.com/ "Link to deployed link - My mommy and me blog)
 
-## Gitpod Reminders
+## Table of contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1. [Introduction](#Introduction)
 
-`python3 -m http.server`
+2. [UX](#UX)
 
-A blue button should appear to click: _Make Public_,
+	A. [Ideal User Demographic](#Ideal-User-Demographic)
 
-Another blue button should appear to click: _Open Browser_.
+	B. [User Stories](#User-Stories)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+	C. [Development Plans](#Development-Plans)
 
-A blue button should appear to click: _Make Public_,
+	D. [Design](#Design)
 
-Another blue button should appear to click: _Open Browser_.
+3. [Features](#Features)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+	A. [Design Features](#Design-Features)
 
-To log into the Heroku toolbelt CLI:
+	B. [Existing Features](#Existing-Features)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+	C. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+4. [Issues and Bugs](#Issues-and-bugs)
 
-------
+5. [Technologies Used](#Technologies-used)
 
-## Release History
+	A. [Main Languages Used](#Main-Languages-Used)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+	B. [Additional Languages Used](#Additional-Languages-Used)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+	C. [Frameworks, Libraries & Programs Used](#Frameworks,-Libraries-&-Programs-Used)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+6. [Testing](#Testing)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+	A. [Testing.md](TESTING.md)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+7. [Deployment](#Deployment)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+	A. [Deploying on Heroku](#Deploying-on-Heroku)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+	B. [Forking the Respository](#Forking-the-repository)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+	C. [Creating a Clone](#Creating-a-Clone)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+8. [Credits](#Credits)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+	A. [Content](#Content)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+	B. [Media](#Media)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+	C. [Code](#Code)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+9. [Acknowledgments](#Aknowledgements)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Introduction
 
-------
+My mommy and me blog was designed to displayed simple recipes for parents with their children. The site's focus is to allow users to share their recipes and experiences for other users to read and use. I got the inspiration in my 4-years-old daughter, she doesn't go to preschool once a month, and she calls our time together: "My mommy and me".
 
-## FAQ about the uptime script
+Users will also be able to comment on recipes, and upload their own images. They can like or unlike the recipe.
 
-**Why have you added this script?**
+This is the fourth of five projects for completing the Full Stack Software Development program at the Code Institute.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## UX
 
-**How will this affect me?**
+### Ideal User Demographic
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The ideal user of this website is:
+• Parents
+• Cooking Enthusiasts
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### User Stories 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### Users
+1. As a site user I can view a paginated list of posts so that I can select one to read
+2. As a site user I can click on a post so that I can read the full text
+3. As a site user/ admin I can view the number of likes on each post so that I can see which is the most popular or viral.
+4. As a site user/admin I can view comments on an individual post so that I can read the conversation.
+5. As a site user I can register an account so that I can comment and like posts.
+6. As a site user I can leave comments on a post so that I can be involved in the conversation.
+7. As a site user I can like or unlike a post so that I can interact with the content.
+8. As a site user I can register with other account (google, facebook, twitter) so that I can sign in quickly.
+9. As a site admin I can create, read, update and delete posts so that I can manage my blog content.
+10.  As a site admin I can create draft posts so that I can finish writing the content later.
+11.  As a site user I can want to save my favorite post so that I can find them easily whenever I want.
+12.  As a site user I can receive updates so that I can keep reading new post.
+13.  As a site user I can reply comments from other users so that I can keep track of the same conversation.
+14.  As a site user I can want to save my favorite post so that I can find them easily whenever I want.
+15. As a site user I can reply comments from other users so that I can keep track of the same conversation.
+16. As a site user I can view a list of posts so that I can select one to read.
+17. As a site user I can see my username displayed so that I know that I log in.
+18.  As a Site user I can create a profile so that I can interact with other user.
+19.  As a Site user I can edit or update any post I posted so that I can add or change something.
+20. As a Site user I can delete my own posts so that I can control the information I post.
 
-**So….?**
+#### Site Admin
+1. As a site admin I can create draft posts so that I can finish writing the content later.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Development Plans
 
-**Can I opt out?**
+To create an appeling website with a great UX and UI, the developer make a research throughout the best cooking blogs, with the best and worst features.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### Strategy
+- **Roles**
+    - User
+    - Admin
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- **Demographic**
+    - Parents
+    - Cooking Enthusiasts
 
-**Anything more?**
+- **Psycographics**
+    - Personality & Attitude:
+        - Patient
+        - Creative
+        - Curious
+    - Values:
+        - Love for quality time in family
+    - Lifestyle:
+        - Parents
+        - Interested in homemade food
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The website needs to enable the *user* to:
+- search for recipes.
+- make comments to a recipe.
+- like and unlike recipes.
+- upload images from their experiences when adding a recipe.
+- register and log in to participate in the blog.
+- save recipes to a favorite page.
 
----
+The website needs to enable the *admin* to:
+- Create drafts for finishing later.
 
-Happy coding!
+#### Scope
+the scope was defined to be able to determine the work that needed to be done in terms of the features and of the strategies described.
+
+- *Content Requirements*
+The user will be expecting:
+    - A comprehensive list of recipes.
+    - A detailed list with ingredients and procedure.
+    - A list of comments.
+    - A page to find the saved recipes.
+
+- *Functionality Requirements*
+The user will be able to:
+    - Navigate the site easily.
+    - Select recipes for trying.
+    - Add comments to every recipe.
+    - Like or unlike recipes.
+
+
+#### Structure
+
+#### Skeleton
+balsamiq wireframes
+
+### Design
+
+#### Color Scheme
+
+#### Typography
+
+#### Imagery
+
+
+## Features
+
+### Design Features
+
+
+### Existing Features
+
+- **Header Logo**
+
+- **Header Navigation Bars**
+
+- **Header Image**
+
+- **Social Icons**
+
+- **Recipe Cards**
+
+- **Recipe Form**
+
+- **Comment Form**
+
+- **Comment Section**
+
+- **Like/Unlike Button**
+
+- **Home Page**
+
+- **About Page**
+
+- **Recipe Page**
+
+- **Add/Edit Recipe Page**
+
+- **Sign In Page**
+
+- **Sign Up Page**
+
+- **Sign Out Page**
+
+### Features to Implement in the future
+
+- **Favorite Page**
+    - Feature:
+    - Readon for not featuring in this release:
+- **Saving Drafts to a Profile Page**
+    - Feature:
+    - Readon for not featuring in this release:
+- **Third-Party Authentication**
+    - Feature:
+    - Readon for not featuring in this release:
+
+## Issues and Bugs
+
+**Bug:**
+
+- **Solution:**
+
+## Technologies Used
+
+### Main Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to Python Wiki")
+
+### Frameworks, Libraries & Programs Used
+- [Django](https://www.djangoproject.com/ "Link to Django Project website")
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Link to Bootstrap page")
+-  [Cloudinary](https://cloudinary.com/ "Link to Cloudinary Page")
+- [Summernote](https://summernote.org "Link to Summernote page")
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+- [Git](https://git-scm.com/ "Link to Git homepage")
+- [GitHub](https://github.com/ "Link to GitHub")
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+- [Google Translate](https://translate.google.com/ "Link to Google Translate")
+- [Coolors](https://coolors.co/ "Link to Coolors")
+
+## Testing
+
+## Deployment
+
+- This project was developed using a [GitPod](https://gitpod.io/ "Link ot GitPod") workspace. 
+- The code was commited to [Git](https://git-scm.com/ "Link to Git").
+- The code was pushed to [GitHub](https://github.com/ "Link to GitHub") using the terminal.
+
+
+
