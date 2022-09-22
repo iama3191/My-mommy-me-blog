@@ -257,4 +257,22 @@ balsamiq wireframes
 - The code was pushed to [GitHub](https://github.com/ "Link to GitHub") using the terminal.
 
 
+### Deploying on Heroku
 
+### Forking the Repository
+
+### Creating a Clone
+When you clone a repository, you copy the repository from GitHub.com to your local machine.
+
+1. On GitHub.com, navigate to the repository's main page.
+2. 
+
+## Credits
+
+### Content
+
+### Media
+
+### Code
+
+## Acknowledgements
