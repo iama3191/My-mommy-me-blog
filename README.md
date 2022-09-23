@@ -3,7 +3,7 @@
 
 ![Responsive display of the blog](path)
 
-[View the live project here](https://my-mommy-and-me.herokuapp.com/ "Link to deployed link - My mommy and me blog)
+[View the live project here](https://my-mommy-and-me.herokuapp.com/ "Link to deployed link - My mommy and me blog")
 
 ## Table of contents
 
@@ -79,8 +79,8 @@ The ideal user of this website is:
 ### User Stories 
 
 #### Users
-1. As a site user I can view a paginated list of posts so that I can select one to read
-2. As a site user I can click on a post so that I can read the full text
+1. As a site user I can view a paginated list of posts so that I can select one to read.
+2. As a site user I can click on a post so that I can read the full text.
 3. As a site user/ admin I can view the number of likes on each post so that I can see which is the most popular or viral.
 4. As a site user/admin I can view comments on an individual post so that I can read the conversation.
 5. As a site user I can register an account so that I can comment and like posts.
@@ -164,10 +164,13 @@ balsamiq wireframes
 ### Design
 
 #### Color Scheme
+The colors were chosen for a soft look of the website and focusing mainly on the images. The terra cotta gives a warm sensation and the cultured color gives a clean and clear sensation without overwhelming the user.
 
 #### Typography
+The font chosen for the heading tags was 'Architects Daughter' as it is a cool and soft typography, and for the rest of the text was 'Open Sans' as it is clear and concise for big texts.
 
 #### Imagery
+To match the color scheme, the default images for the recipes and the hero image were chosen to complement each other.
 
 
 ## Features
