@@ -3,7 +3,7 @@ Forms
 """
 from django_summernote.widgets import SummernoteWidget
 from django import forms
-from .models import Comment, Post
+from .models import Comment, Recipe
 
 
 class CommentForm(forms.ModelForm):
@@ -14,7 +14,7 @@ class CommentForm(forms.ModelForm):
 
 class RecipeForm(forms.ModelForm):
     class Meta:
-        model = Post
+        model = Recipe
         fields = [
             'title',
             'slug',

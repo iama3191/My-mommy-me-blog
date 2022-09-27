@@ -11,17 +11,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RenameField(
-            model_name='post',
+            model_name='recipe',
             old_name='excerpt',
             new_name='description',
         ),
         migrations.RenameField(
-            model_name='post',
+            model_name='recipe',
             old_name='content',
             new_name='ingredients',
         ),
         migrations.AddField(
-            model_name='post',
+            model_name='recipe',
             name='instructions',
             field=models.TextField(default=''),
         ),

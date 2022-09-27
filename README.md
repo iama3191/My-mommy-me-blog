@@ -80,25 +80,25 @@ The ideal user of this website is:
 
 #### Users
 1. As a site user I can view a paginated list of posts so that I can select one to read.
-2. As a site user I can click on a post so that I can read the full text.
-3. As a site user/ admin I can view the number of likes on each post so that I can see which is the most popular or viral.
-4. As a site user/admin I can view comments on an individual post so that I can read the conversation.
+2. As a site user I can click on a recipe so that I can read the full text.
+3. As a site user/ admin I can view the number of likes on each recipe so that I can see which is the most popular or viral.
+4. As a site user/admin I can view comments on an individual recipe so that I can read the conversation.
 5. As a site user I can register an account so that I can comment and like posts.
-6. As a site user I can leave comments on a post so that I can be involved in the conversation.
-7. As a site user I can like or unlike a post so that I can interact with the content.
+6. As a site user I can leave comments on a recipe so that I can be involved in the conversation.
+7. As a site user I can like or unlike a recipe so that I can interact with the content.
 8. As a site user I can register with other account (google, facebook, twitter) so that I can sign in quickly.
 9. As a site admin I can create, read, update and delete posts so that I can manage my blog content.
 10.  As a site admin I can create draft posts so that I can finish writing the content later.
-11.  As a site user I can want to save my favorite post so that I can find them easily whenever I want.
-12.  As a site user I can receive updates so that I can keep reading new post.
+11.  As a site user I can want to save my favorite recipe so that I can find them easily whenever I want.
+12.  As a site user I can receive updates so that I can keep reading new recipe.
 13.  As a site user I can reply comments from other users so that I can keep track of the same conversation.
-14.  As a site user I can want to save my favorite post so that I can find them easily whenever I want.
+14.  As a site user I can want to save my favorite recipe so that I can find them easily whenever I want.
 15. As a site user I can reply comments from other users so that I can keep track of the same conversation.
 16. As a site user I can view a list of posts so that I can select one to read.
 17. As a site user I can see my username displayed so that I know that I log in.
 18.  As a Site user I can create a profile so that I can interact with other user.
-19.  As a Site user I can edit or update any post I posted so that I can add or change something.
-20. As a Site user I can delete my own posts so that I can control the information I post.
+19.  As a Site user I can edit or update any recipe I posted so that I can add or change something.
+20. As a Site user I can delete my own posts so that I can control the information I recipe.
 
 #### Site Admin
 1. As a site admin I can create draft posts so that I can finish writing the content later.

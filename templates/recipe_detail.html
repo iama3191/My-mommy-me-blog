@@ -4,24 +4,24 @@
 
 <!-- Blog title -->
 {% block title %}
-  <title>{{ post.title }}| {{ post.author }}</title>
+  <title>{{ recipe.title }}| {{ recipe.author }}</title>
 {% endblock %}
 
 <!-- Recipe Details -->
 <div class="container recipe-container text-center">
-  <h1 class="post-title">{{ post.title }}</h1>
-  <small>By: {{ post.author }} | {{ post.created_on }}</small>
+  <h1 class="recipe-title">{{ recipe.title }}</h1>
+  <small>By: {{ recipe.author }} | {{ recipe.created_on }}</small>
   <hr>
   <div class="recipe-summary">
     <div class="recipe-detail-img">
-      {% if "placeholder" in post.featured_image.url %}
+      {% if "placeholder" in recipe.featured_image.url %}
         <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
       {% else %}
-        <img src="{{ post.featured_image.url }}" width="100%">
+        <img src="{{ recipe.featured_image.url }}" width="100%">
       {% endif %}
     </div>
     <div class="recipe-detail-desc">
-      <p>{{ post.description }}</p>
+      <p>{{ recipe.description }}</p>
     </div>
   </div>
 </div>
@@ -29,23 +29,23 @@
   <hr>
   <div class="row">
     <h3>Ingredients</h3>  
-    <p> {{ post.ingredients | safe }}</p>
+    <p> {{ recipe.ingredients | safe }}</p>
   </div>
   <div class="row"><h3>Instructions</h3>
-    {{ post.instructions | safe }}
+    {{ recipe.instructions | safe }}
   </div>
   <div class="row">
     <div class="col-1">
       <strong>
         {% if user.is_authenticated %}
-          <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+          <form action="{% url 'post_like' recipe.slug %}" method="recipe" class="d-inline">
             {% csrf_token %}
             {% if liked %}
-              <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
+              <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
                 <i class="fa-solid fa-heart"></i>
               </button>
             {% else %}
-              <button type="submit" value="{{ post.slug }}" class="btn-like" name="blogspot_id">
+              <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
                 <i class="fa-regular fa-heart"></i>
               </button>
             {% endif %}
@@ -53,7 +53,7 @@
         {% else %}
           <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
         {% endif %}
-        <span class="text-secondary">{{ post.number_of_likes }}</span>
+        <span class="text-secondary">{{ recipe.number_of_likes }}</span>
       </strong>
   </div>
   <div class="col-1">
@@ -62,10 +62,10 @@
           {{ total_comments }}</strong>
       {% endwith %}
   </div>
-  {% if user.id == post.author.id %}
+  {% if user.id == recipe.author.id %}
     <div class="row d-inline mt-3">
-      <a href="{% url 'update_recipe' post.slug %}"><button class="btn btn-secondary update" type="button">Update</button></a>
-      <a href="{% url 'delete_recipe' post.slug %}"><button class="btn btn-secondary delete" type="button">Delete</button></a>
+      <a href="{% url 'update_recipe' recipe.slug %}"><button class="btn btn-secondary update" type="button">Update</button></a>
+      <a href="{% url 'delete_recipe' recipe.slug %}"><button class="btn btn-secondary delete" type="button">Delete</button></a>
     </div>
   {% endif %}
   </div>
@@ -92,7 +92,7 @@
         {% if user.is_authenticated %}
           <h3>Leave a comment</h3>
           <p>Commenting as: {{ user.username }}</p>
-          <form method="post" style="margin-top: 1.3em;">
+          <form method="recipe" style="margin-top: 1.3em;">
             {{ comment_form | crispy }}
             {% csrf_token %}
             <div class="text-center">
