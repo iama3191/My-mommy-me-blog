@@ -34,10 +34,14 @@
                 </div>
             </div>
         {% else %}
-            <h2 class="text-center">You're not allowed to update this recipe.</h2>
+            <div class="container warning-message text-center">
+                <h5 class="text-center">You're not allowed to update this recipe.</h5>
+            </div>
         {% endif %}
     {% else %}
-        <h2 class="text-center">You're not allowed to update this recipe.</h2>
+        <div class="container warning-message text-center">
+            <h5 class="text-center">You're not allowed to update this recipe.</h5>
+        </div>
     {% endif %}
 
 

@@ -153,10 +153,12 @@ footer p {
 .preparation-container,
 .comments-container,
 .update-container,
-.account-container {
+.account-container,
+.warning-message {
     background-color: rgb(248, 249, 250, 0.8);
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 .recipe-summary {
@@ -267,4 +269,10 @@ i .fa-regular,
 .signin-link:hover,
 .pagination-links:hover {
     color: #000;
+}
+
+
+.summernote-div {
+    width: 60%;
+    max-width: 310px;
 }

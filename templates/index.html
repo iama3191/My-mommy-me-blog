@@ -35,7 +35,7 @@
                   <p class="author">Author: {{ recipe.author }}</p>
                 </div>
                 <hr>
-                {% if recipe.updated_on %}
+                {% if recipe.updated_on != recipe.created_on %}
                   <p class="card-text"><small class="text-muted">{{ recipe.updated_on }} <i class="fa-regular fa-heart right mx-auto"></i> {{ recipe.number_of_likes }}</small>
                   </p>
                 {% else %}

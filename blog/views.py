@@ -76,7 +76,7 @@ class RecipeDetail(View):
             },
         )
 
-    def recipe(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         """
         Submits form content to the database
         """

@@ -15,9 +15,9 @@
   <div class="recipe-summary">
     <div class="recipe-detail-img">
       {% if "placeholder" in recipe.featured_image.url %}
-        <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="100%">
+        <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="80%">
       {% else %}
-        <img src="{{ recipe.featured_image.url }}" width="100%">
+        <img src="{{ recipe.featured_image.url }}" width="80%">
       {% endif %}
     </div>
     <div class="recipe-detail-desc">
