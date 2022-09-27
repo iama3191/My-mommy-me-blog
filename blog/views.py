@@ -44,7 +44,7 @@ class RecipeList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-    paginated_by = 6
+    paginate_by = 6
 
 
 class RecipeDetail(View):
@@ -145,7 +145,7 @@ class RecipeLike(View):
     """
     Likes on a recipe
     """
-    def recipe(self, request, slug):
+    def post(self, request, slug):
         """
         Submits to view
         """

@@ -38,11 +38,11 @@
     <div class="col-1">
       <strong>
         {% if user.is_authenticated %}
-          <form action="{% url 'recipe_like' recipe.slug %}" method="post" class="d-inline">
+          <form action="{% url 'recipe_like' recipe.slug %}" method="POST" class="d-inline">
             {% csrf_token %}
             {% if liked %}
               <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart"></i>      
               </button>
             {% else %}
               <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">

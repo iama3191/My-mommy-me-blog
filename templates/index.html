@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-12 mt-3 left">
       <div class="row">
-        {% for recipe in recipe_list %}
+        {% for recipe in page_obj %}
           <div class="col-md-4 my-4">
             <div class="card text-center">
               <div class="image-container">
@@ -49,24 +49,25 @@
         </div>
           <div class="row">
           {% endif %}
+
           {% endfor %}
         </div>  
       </div> 
     </div> 
-
-    <!-- Pagination section -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation" id="site-pagination">
-      <ul class="pagination justify-content-center">
+          <!-- Pagination section -->
+    <div class="pagination d-flex justify-content-center  align-items-center">
+      <div class="step-links">
         {% if page_obj.has_previous %}
-          <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+          <a class="pagination-links" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
         {% endif %}
+  
+        <span class="current">
+          {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+  
         {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+          <a class="pagination-links" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
         {% endif %}
-      </ul>
-    </nav>  
-    {% endif %}
-</div>
-
+      </div>
+  </div>
 {% endblock %}
