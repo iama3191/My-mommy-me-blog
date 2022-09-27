@@ -23,6 +23,9 @@ class Recipe(models.Model):
 
 
     def __str__(self):
+        """
+        Return the title of the recipe
+        """
         return self.title
 
     def number_of_likes(self):
