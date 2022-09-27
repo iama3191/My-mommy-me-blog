@@ -42,7 +42,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 </div>
 <div class="row">
   <div class="col-md-8 mt-3 offset-md-2 text-center">
-    <form class="login" method="recipe" action="{% url 'account_login' %}">
+    <form class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       {{ form.as_p }}
       {% if redirect_field_value %}

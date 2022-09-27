@@ -38,7 +38,7 @@
     <div class="col-1">
       <strong>
         {% if user.is_authenticated %}
-          <form action="{% url 'post_like' recipe.slug %}" method="recipe" class="d-inline">
+          <form action="{% url 'recipe_like' recipe.slug %}" method="post" class="d-inline">
             {% csrf_token %}
             {% if liked %}
               <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
@@ -92,7 +92,7 @@
         {% if user.is_authenticated %}
           <h3>Leave a comment</h3>
           <p>Commenting as: {{ user.username }}</p>
-          <form method="recipe" style="margin-top: 1.3em;">
+          <form method="POST" style="margin-top: 1.3em;">
             {{ comment_form | crispy }}
             {% csrf_token %}
             <div class="text-center">
