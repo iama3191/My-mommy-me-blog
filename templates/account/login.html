@@ -6,7 +6,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container account-container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2 text-center">
       <h3>{% trans "Sign In" %}</h3>
@@ -36,7 +36,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 -->
-        <p>{% blocktrans %}Welcome back to the Mommy & me blog. To leave a comment or like a recipe, please log in. If you don't have an account yet, you can <a class="link" href="{{ signup-url }}">sign up</a>
+        <p>{% blocktrans %}Welcome back to the Mommy & me blog. To leave a comment or like a recipe, please log in. If you don't have an account yet, you can <a class="link signin-link" href="{{ signup_url }}">sign up</a>
         first.{% endblocktrans %}</p>
   </div>
 </div>
@@ -48,7 +48,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+      <button class="btn btn-signup right account-btn" type="submit">{% trans "Sign In" %}</button>
     </form>
   </div>
 </div>
