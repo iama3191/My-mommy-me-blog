@@ -6,6 +6,7 @@ html {
 
 body {
     min-height: 100vh;
+    background-color: rgb(210, 117, 96);
 }
 
 p {
@@ -136,7 +137,7 @@ footer p {
 .current {
     margin-left: 30px;
     margin-right: 30px;
-    color: #454c51;
+    color: rgb(255, 255, 255, 0.8);
 }
 
 .pagination-links {
@@ -247,6 +248,7 @@ i .fa-regular,
     width: 50%;
     max-width: 80%;
     height: 100%;
+
 }
 
 .account-btn:hover {
