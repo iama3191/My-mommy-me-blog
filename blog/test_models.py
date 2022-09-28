@@ -28,13 +28,13 @@ class TestAppModels(TestCase):
             body='test comment',
         )
 
-    def test_recipe_model_str(self):
+    def test_recipe_model_str_returns_name(self):
         """
         Test the __str__ method for recipe
         """
         self.assertEqual(self.recipe.__str__(), self.recipe.title)
 
-    def test_comment_model_str(self):
+    def test_comment_model_str_returns_name(self):
         """
         Test the __str__ method for comment
         """
@@ -55,3 +55,16 @@ class TestAppModels(TestCase):
         """
         self.assertTrue(self.recipe.status == 0)
         
+    def test_recipe_like_user(self):
+        """Test likes counting"""
+        testuser = User.objects.create_user(
+            username='user1', password='12345'
+        )
+        testuser2 = User.objects.create_user(
+            username='user2', password='123456'
+        )
+        title = Recipe.objects.create(
+            title='cake', author=self.user
+        )
+        title.likes.set([testuser.pk, testuser2.pk])
+        self.assertEqual(title.likes.count(), 2)
