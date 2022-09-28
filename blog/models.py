@@ -21,7 +21,6 @@ class Recipe(models.Model):
     class Meta:
         ordering = ['-created_on']
 
-
     def __str__(self):
         """
         Return the title of the recipe
