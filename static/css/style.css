@@ -251,7 +251,7 @@ i .fa-regular,
     width: 50%;
     max-width: 80%;
     height: 100%;
-
+    margin-top: 3em;
 }
 
 .account-btn:hover {
@@ -277,3 +277,42 @@ i .fa-regular,
     width: 60%;
     max-width: 310px;
 }
+
+/* About page */
+
+
+.about-container {
+    padding: 2em;
+    line-height: 25px;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.registration-links {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #D27560;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+.registration-links:hover {
+    color: #000;
+}
+
+
+@media (max-width: 575.98px) {
+    #title-blog {
+        font-size: 1.2em;
+    }
+
+    .about-container,
+    .account-container {
+        width: 100%;
+    }
+
+    .account-container {
+        margin-top: 2em;
+ }

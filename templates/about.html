@@ -13,10 +13,23 @@
 {% block content %}
 
 <!-- Main content -->
-<div class="container">
+<div class="container about-section">
   <div class="about-container">
     <h2 class="text-center">About 'My mommy & me' blog</h2>
-    
+    <div class="about-description">
+      <p>'My mommy & me' blog is the achievement of a community united in the search for quality time with their children. Through creativity, patience and mutual support we can carry out a different activity for a special day. The little ones will appreciate it infinitely and the parents will be able to test the capabilities of their little ones.
+      </p>
+    </div>
+    <div class="about-participation">
+      <h3 class="text-center">How can you participate?</h3>
+      <ul>
+        <li>You can show support by liking or commenting on other users' recipes.</li>
+        <li>You can post your own recipes.</li>
+        <li>You can reply to other users' comments.</li>
+        <li>Remember to be nice to other users and in their comments.</li>
+      </ul>
+      <p>Before you participate, please <a class="registration-links" href="{% url 'account_login' %}">login</a> or you can <a class="registration-links" href="{% url 'account_signup' %}">sign up</a>.</p>
+    </div>
   </div>
 </div>
 {% endblock %}
