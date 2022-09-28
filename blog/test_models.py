@@ -42,3 +42,16 @@ class TestAppModels(TestCase):
             self.comment.__str__(),
             f"Comment {self.comment.body} by {self.comment.name}"
             )
+
+    def test_comment_default_value(self):
+        """
+        Test default value for the comment
+        """
+        self.assertTrue(self.comment.approved)
+
+    def test_recipe_default_value(self):
+        """
+        Test default value for the comment status
+        """
+        self.assertTrue(self.recipe.status == 0)
+        

@@ -32,6 +32,7 @@ class Recipe(models.Model):
         return self.title
 
     def number_of_likes(self):
+        """Returns number of blog post likes"""
         return self.likes.count()
 
 
