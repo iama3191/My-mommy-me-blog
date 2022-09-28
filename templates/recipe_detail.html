@@ -1,10 +1,10 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
 
 <!-- Blog title -->
 {% block title %}
-  <title>My mommy & me|{{ recipe.title }}</title>
+<title>My mommy & me|{{ recipe.title }}</title>
 {% endblock %}
 
 <!-- Recipe Details -->
@@ -15,9 +15,10 @@
   <div class="recipe-summary">
     <div class="recipe-detail-img">
       {% if "placeholder" in recipe.featured_image.url %}
-        <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" width="80%">
+      <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg"
+        width="80%">
       {% else %}
-        <img src="{{ recipe.featured_image.url }}" width="80%">
+      <img src="{{ recipe.featured_image.url }}" width="80%">
       {% endif %}
     </div>
     <div class="recipe-detail-desc">
@@ -28,50 +29,54 @@
 <div class="container preparation-container text-center">
   <hr>
   <div class="row">
-    <h3>Ingredients</h3>  
+    <h3>Ingredients</h3>
     <p> {{ recipe.ingredients | safe }}</p>
   </div>
-  <div class="row"><h3>Instructions</h3>
+  <div class="row">
+    <h3>Instructions</h3>
     {{ recipe.instructions | safe }}
   </div>
   <div class="row">
     <div class="col-1">
       <strong>
         {% if user.is_authenticated %}
-          <form action="{% url 'recipe_like' recipe.slug %}" method="POST" class="d-inline">
-            {% csrf_token %}
-            {% if liked %}
-              <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
-                <i class="fa-solid fa-heart"></i>      
-              </button>
-            {% else %}
-              <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            {% endif %}
-          </form>
+        <form action="{% url 'recipe_like' recipe.slug %}" method="POST" class="d-inline">
+          {% csrf_token %}
+          {% if liked %}
+          <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+          {% else %}
+          <button type="submit" value="{{ recipe.slug }}" class="btn-like" name="blogspot_id">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          {% endif %}
+        </form>
         {% else %}
-          <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
+        <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
         {% endif %}
         <span class="text-secondary">{{ recipe.number_of_likes }}</span>
       </strong>
-  </div>
-  <div class="col-1">
+    </div>
+    <div class="col-1">
       {% with comments.count as total_comments %}
       <strong class="text-secondary"><i class="fa-regular fa-comment"></i>
-          {{ total_comments }}</strong>
+        {{ total_comments }}</strong>
       {% endwith %}
-  </div>
-  {% if user.id == recipe.author.id %}
-    <div class="row d-inline mt-3">
-      <a href="{% url 'update_recipe' recipe.slug %}"><button class="btn btn-secondary update" type="button">Update</button></a>
-      <a href="{% url 'delete_recipe' recipe.slug %}"><button class="btn btn-secondary delete" type="button">Delete</button></a>
     </div>
-  {% endif %}
+    {% if user.id == recipe.author.id %}
+    <div class="row d-inline mt-3">
+      <a href="{% url 'update_recipe' recipe.slug %}"><button class="btn btn-secondary update"
+          type="button">Update</button></a>
+      <a href="{% url 'delete_recipe' recipe.slug %}"><button class="btn btn-secondary delete"
+          type="button">Delete</button></a>
+    </div>
+    {% endif %}
   </div>
 </div>
 <div class="container comments-container">
-  <hr><h3 class="mx-2">Comments</h3>
+  <hr>
+  <h3 class="mx-2">Comments</h3>
   <div class="card mb-3 comment-card">
     {% for comment in comments %}
     <div class="card-header comment-posted">
@@ -86,20 +91,20 @@
   <div class="container">
     <div class="card-body">
       {% if commented %}
-        <div class="alert alert-success" role="alert">Your comment is posted
-        </div>
+      <div class="alert alert-success" role="alert">Your comment is posted
+      </div>
       {% else %}
-        {% if user.is_authenticated %}
-          <h3>Leave a comment</h3>
-          <p>Commenting as: {{ user.username }}</p>
-          <form method="POST" style="margin-top: 1.3em;">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <div class="text-center">
-              <button type="submit" class="btn btn-secondary btn-lg comment-btn">Comment</button>
-            </div>
-          </form>
-        {% endif %}
+      {% if user.is_authenticated %}
+      <h3>Leave a comment</h3>
+      <p>Commenting as: {{ user.username }}</p>
+      <form method="POST" style="margin-top: 1.3em;">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
+        <div class="text-center">
+          <button type="submit" class="btn btn-secondary btn-lg comment-btn">Comment</button>
+        </div>
+      </form>
+      {% endif %}
       {% endif %}
     </div>
   </div>

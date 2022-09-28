@@ -2,40 +2,42 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    {% block title %}
-    <title>My mommy & me|Add Recipe</title>
-    {% endblock %}
+{% block title %}
+<title>My mommy & me|Add Recipe</title>
+{% endblock %}
 
-    <!-- Hero  image -->
-    {% block hero %}
-    {% endblock %}
+<!-- Hero  image -->
+{% block hero %}
+{% endblock %}
 
-    {% if user.is_authenticated %}
-        <!-- Form for adding a new recipe -->
-        <div class="container recipe-container text-center">
-            <div class="row">
-                <div class="col">
-                    <h2 class="text-center">{{ user }}, would you like to add a new recipe?</h2>
-                    <form action="." method="POST" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col">
-                                {{ recipe_form | crispy | safe }}
-                                {% csrf_token %}
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-secondary green-btn">Add Recipe</button>
-                    </form>
+{% if user.is_authenticated %}
+<!-- Form for adding a new recipe -->
+<div class="container recipe-container text-center">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">{{ user }}, would you like to add a new recipe?</h2>
+            <form action="." method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col">
+                        {{ recipe_form | crispy | safe }}
+                        {% csrf_token %}
+                    </div>
                 </div>
-            </div>
+                <button type="submit" class="btn btn-secondary green-btn">Add Recipe</button>
+            </form>
         </div>
-    {% else %}
-        <div class="container warning-message text-center">
-            <div class="row">
-                <h5>Before you can add a new recipe, you need to <a class="signin-link" href="{% url 'account_login' %}">log in</a> if you already have an account; or you can sign up <a class="signin-link" href="{% url 'account_signup' %}">here.</a></h5>
-            </div>
-        </div>
+    </div>
+</div>
+{% else %}
+<div class="container warning-message text-center">
+    <div class="row">
+        <h5>Before you can add a new recipe, you need to <a class="signin-link" href="{% url 'account_login' %}">log
+                in</a> if you already have an account; or you can sign up <a class="signin-link"
+                href="{% url 'account_signup' %}">here.</a></h5>
+    </div>
+</div>
 
-    {% endif %}
+{% endif %}
 
 
 {% endblock %}

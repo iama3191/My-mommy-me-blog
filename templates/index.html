@@ -2,12 +2,12 @@
 
 <!-- Blog title -->
 {% block title %}
-  <title>My mommy & me|Blog</title>
+<title>My mommy & me|Blog</title>
 {% endblock %}
 
 <!-- Blog hero image -->
 {% block hero %}
-  <div class="hero-image"></div>
+<div class="hero-image"></div>
 {% endblock %}
 
 <!-- Blog main content -->
@@ -17,57 +17,60 @@
     <div class="col-12 mt-3 left">
       <div class="row">
         {% for recipe in page_obj %}
-          <div class="col-md-4 my-4">
-            <div class="card text-center">
-              <div class="image-container">
-                {% if "placeholder" in recipe.featured_image.url %}
-                  <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" class="card-img-top recipe-img">
-                {% else %}
-                  <img src="{{ recipe.featured_image.url }}" class="card-img-top recipe-img">
-                {% endif %}
+        <div class="col-md-4 my-4">
+          <div class="card text-center">
+            <div class="image-container">
+              {% if "placeholder" in recipe.featured_image.url %}
+              <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg"
+                class="card-img-top recipe-img">
+              {% else %}
+              <img src="{{ recipe.featured_image.url }}" class="card-img-top recipe-img">
+              {% endif %}
+            </div>
+            <div class="card-body">
+              <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                <h3 class="card-title text-center">{{ recipe.title }}</h3>
+                <p class="card-text">{{ recipe.description|slice:":26" }}</p>
+              </a>
+              <div class="image-flash">
+                <p class="author">Author: {{ recipe.author }}</p>
               </div>
-              <div class="card-body">
-                <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
-                  <h3 class="card-title text-center">{{ recipe.title }}</h3>
-                  <p class="card-text">{{ recipe.description|slice:":26" }}</p>
-                </a>
-                <div class="image-flash">
-                  <p class="author">Author: {{ recipe.author }}</p>
-                </div>
-                <hr>
-                {% if recipe.updated_on != recipe.created_on %}
-                  <p class="card-text"><small class="text-muted">{{ recipe.updated_on }} <i class="fa-regular fa-heart right mx-auto"></i> {{ recipe.number_of_likes }}</small>
-                  </p>
-                {% else %}
-                  <p class="card-text"><small class="text-muted">{{ recipe.created_on }} <i class="fa-regular fa-heart right mx-auto"></i> {{ recipe.number_of_likes }}</small>
-                  </p>
-                {% endif %}
-              </div>
+              <hr>
+              {% if recipe.updated_on != recipe.created_on %}
+              <p class="card-text"><small class="text-muted">{{ recipe.updated_on }} <i
+                    class="fa-regular fa-heart right mx-auto"></i> {{ recipe.number_of_likes }}</small>
+              </p>
+              {% else %}
+              <p class="card-text"><small class="text-muted">{{ recipe.created_on }} <i
+                    class="fa-regular fa-heart right mx-auto"></i> {{ recipe.number_of_likes }}</small>
+              </p>
+              {% endif %}
             </div>
           </div>
-          {% if forloop.counter|divisibleby:3 %}
         </div>
-          <div class="row">
-          {% endif %}
-
-          {% endfor %}
-        </div>  
-      </div> 
-    </div> 
-          <!-- Pagination section -->
-    <div class="pagination d-flex justify-content-center  align-items-center">
-      <div class="step-links">
-        {% if page_obj.has_previous %}
-          <a class="pagination-links" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
-        {% endif %}
-  
-        <span class="current">
-          {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-        </span>
-  
-        {% if page_obj.has_next %}
-          <a class="pagination-links" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
-        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
       </div>
+      <div class="row">
+        {% endif %}
+
+        {% endfor %}
+      </div>
+    </div>
   </div>
-{% endblock %}
+  <!-- Pagination section -->
+  <div class="pagination d-flex justify-content-center  align-items-center">
+    <div class="step-links">
+      {% if page_obj.has_previous %}
+      <a class="pagination-links" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+      {% endif %}
+
+      <span class="current">
+        {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+      <a class="pagination-links" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endblock %}
