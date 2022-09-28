@@ -105,6 +105,7 @@ The ideal user of this website is:
 
 To create an appeling website with a great UX and UI, the developer make a research throughout the best cooking blogs, with the best and worst features.
 
+
 #### Strategy
 - **Roles**
     - User
@@ -153,23 +154,34 @@ The user will be able to:
     - Add comments to every recipe.
     - Like or unlike recipes.
 
-
-#### Structure
-
-#### Skeleton
-balsamiq wireframes
-
 ### Design
 
 #### Color Scheme
 The colors were chosen for a soft look of the website and focusing mainly on the images. The terra cotta gives a warm sensation and the cultured color gives a clean and clear sensation without overwhelming the user.
 
+![Color scheme from Coolors](path)
+
 #### Typography
 The font chosen for the heading tags was 'Architects Daughter' as it is a cool and soft typography, and for the rest of the text was 'Open Sans' as it is clear and concise for big texts.
 
-#### Imagery
-To match the color scheme, the default images for the recipes and the hero image were chosen to complement each other.
+![Typograpy from Google Fonts](path)
 
+#### Imagery
+To match the color scheme, the default images for the recipes and the hero image were chosen to complement each other. The images were selected from [Pexels](www.pexels.com) and [Unsplash](www.unsplash.com).
+
+### Design
+
+#### Data model
+
+The project is hosted on Heroku and the database used is Heroku PostreSQL. Cloudinary is used to store all the images. Two custom models were created for the project: Recipe and Comment. This models were modified from the Walkthrough project from Code Institute 'I Think Therefor I blog'.
+
+Entity relationship Diagram - Recipe
+
+![Relationship Diagram for Recipe](path)
+
+Entity relationship Diagram - Comment
+
+![Relationship Diagram for Recipe](path)
 
 ## Features
 
@@ -241,39 +253,135 @@ This section is very similar to the home page, but instead of showing a list of 
 
 - **Add Recipe:**
 
-After the user is logged in, he has a link on the navbar for adding a recipe. If he clicks on this link, he will be redirected to the 
+After the user is logged in, he has a link on the navbar for adding a recipe. If he clicks on this link, he will be redirected to the page with a form that needs to be completed.
+The form has the next required fields to submit the recipe: 
+
+* Title: The user must insert an unique name.
+* Slug: The user must insert an unique name as an id for the post (blank spaces or other symbols are n ot allowed.)
+* Ingredients: For this field is included the features of SummernoteWidget, and the user is able to customize the ingredients section. The editor has included a toolbar for adding style to the content.
+* Instructions: For this field is included the features of SummernoteWidget, and the user is able to customize the instructions section. The editor has included a toolbar for adding style to the content.
+* Description: This field is for adding a small description, note or advice for making the recipe.
+* Image: The user will be able to upload a photo to display as a main image for the recipe. If the user doesn't 
+
 
 If the user isn't logged in, but knows the URL for this action, a message is shown as a reminder to login or sign up.
 
+![Add recipe form from Summernote](path)
 
-- **Comment Form**
+- **Recipe detail page:**
 
-- **Comment Section**
+If the user is interested on a recipe from the home page, by clicking on the title of the card, the user is redirected to all details of the recipe.
+* At the top is the title of the recipe, then it follows the author of the post and the date when the post was created. 
+* Then are two columns, the first one on the left-hand side is the image of the recipe (uploaded by the user or the default image), on the right-hand side is the description of the recipe.
+* The ingredients are shown, as the user wanted.
+* The instruction section is next.
+* Finally, two buttons will appear:  a like/ unlike button and the number of comments button.
 
-- **Like/Unlike Button**
+![Recipe detail page](path)
 
+If the user is logged in:
+* The user can toggle on the empty heart button for liking a recipe.
 
-- **Recipe Page**
+![User likes a recipe](path)
 
-- **Add/Edit Recipe Page**
+* The user can toggle on the full heart button for unliking a recipe.
 
-- **Sign In Page**
+![User unlikes a recipe](path)
+
+ Recipe detail page - Comment section:
+
+ After the recipe's details are displaying, it comes the comment section. The comments are shown from newest to oldest.
+ * First is the creation date of the comment.
+ * Then is the name of the author.
+ * The content of the comment.
+
+ ![Comment section](path)
+
+ If the user is logged in:
+ * It will appear a textarea for commenting, in case the user wants.
+
+ ![Leave a comment textarea](path)
+
+ If the user isn't logged in:
+ * It will only appear all the previous comments, and the textarea for commenting is not shown.
+
+  ![Comment section](path)
+
+ Recipe detail page - Update and delete recipe:
+
+ If the user is logged in and is the author of the recipe:
+ * Two buttons will be shown: Update and Delete buttons.
+ * The Update button redirects the user to the update recipe page for any modification.
+ * The Delete button redirects the user to a confirmation of action.
+
+  ![Update and delete buttons](path)
+
+  If the user isn't logged in and isn't the author of the recipe:
+  * The buttons are not displayed.
+
+  ![Section without the ability for modifying](path)
+
+ - **Update Recipe Page**
+ On this page, only the owner of the post can make any modification to it, it will show the same form from Summernote with all the fields pre-populated.
+After the user modify whatever he wants and submits the recipe, it will be redirected to the home page. If something is not correct, it will stay at the update page with a small warning on the incorrect field.
+
+* If the user didn't update succesfully:
+
+    ![Warning from the incorrect field](path)
 
 - **Sign Up Page**
+To interact with the blog, the user is required to register and login. If the user is not registered, it will be reminded to do it in multiple ways, and he can be redirected by many links on the site.
 
-- **Sign Out Page**
+* Using the navbar link
+* Using the link provided on the Login page.
+* Using the link provided on the About page.
+* Using the link provided on the Update page if the user knows a certain URL.
+
+A new account is created easily. The user needs to complete the following information:
+
+* Username: must be unique.
+* E-mail: optional.
+* Password: Which must be entered twice.
+
+![Register form](path)
+
+When the user completes all the fields and if the information is valid, the account is created and he's redirected to the Home page.
+
+- **Login Page**
+
+For full CRUD functionality on posted recipes, or the ability to like/unlike a recipe, the user is required to login to the site. The Login page can be accessed by multiple ways:
+
+* Using the navbar link.
+* Using the link provided on the Sign up page.
+* Using the link provided on the About page.
+* Using the link provided on the Update page if the user knows a certain URL.
+
+After the user is registered, the login process is quickly. The user needs to complete the following information:
+
+* Valid username.
+* Correct password.
+
+![Login form](path)
+
+If the user wants, he can ask to be rememeber and avoid repeating the login process. Afrer he submits the information and if it's valid, he will be redirected to the Home page.
+
+- **Logout Page**
+
+The Logout page can be accessed by the navbar link on every page after the user is logged in. When the user clicks on it, he will be redirected to the Logout page for confirming the action. If the user accepts the process, he will go to the Home page, otherwise he will go to the previous page visited.
+
+![Logout form](path)
 
 ### Features to Implement in the future
 
 - **Favorite Page**
-    - Feature:
-    - Readon for not featuring in this release:
-- **Saving Drafts to a Profile Page**
-    - Feature:
-    - Readon for not featuring in this release:
+    - Feature: Every user will have on his profile a section with all their favorite recipe (after liking it) for easy access at any time.  
+    - Reason for not featuring in this release: The developer run out of enough time for implementation.
+- **Create a Profile Page**
+    - Feature: Every user has a profile page that will be created when he registers, this profile can be modified at any time.
+    - Reason for not featuring in this release: The developer run out of enough time for implementation.
 - **Third-Party Authentication**
-    - Feature:
-    - Readon for not featuring in this release:
+    - Feature: The user will have the ability to register with an existent account on a social media, like Facebook or Google.
+    - Reason for not featuring in this release: The developer run out of enough time for implementation.
 
 ## Issues and Bugs
 
@@ -290,19 +398,115 @@ If the user isn't logged in, but knows the URL for this action, a message is sho
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to Python Wiki")
 
 ### Frameworks, Libraries & Programs Used
-- [Django](https://www.djangoproject.com/ "Link to Django Project website")
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Link to Bootstrap page")
--  [Cloudinary](https://cloudinary.com/ "Link to Cloudinary Page")
-- [Summernote](https://summernote.org "Link to Summernote page")
-- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
-- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
-- [Git](https://git-scm.com/ "Link to Git homepage")
-- [GitHub](https://github.com/ "Link to GitHub")
-- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
-- [Google Translate](https://translate.google.com/ "Link to Google Translate")
-- [Coolors](https://coolors.co/ "Link to Coolors")
+- [Django](https://www.djangoproject.com/ "Link to Django Project website"): Python Framework used in the development of the project.
+
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html "Link to django-allauth documentation"): Used for authentication and account registration.
+
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/ "Link to django crispy documentation"): Used to simplify the rendering of Django forms.
+
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Link to Bootstrap page"): Bootstrap CSS Framework used for styling and to build responsive web pages.
+
+- [Cloudinary](https://cloudinary.com/ "Link to Cloudinary Page"): Used to store all the blog images and the uploaded by the user.
+
+- [Heroku](https://dashboard.heroku.com/ "Link to the Heroku Home Page"): For deployment and hosting of the application.
+
+- [Heroku PostgreSQL](https://www.heroku.com/postgres "Link to the Heroku PostgreSQL Page"): The database used for this application.
+
+- [Summernote](https://summernote.org "Link to Summernote page"): To provide a WYSIWYG editor for customizing new blog content and add images.
+
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts"): To import the needed fonts for the project: 'Architects Daughter' and 'Open Sans'.
+
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome"): Used to add icons and make the blog more interactive.
+
+- [Git](https://git-scm.com/ "Link to Git homepage"): Used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+- [GitHub](https://github.com/ "Link to GitHub"): Used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
+
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage"): Checking the responsive.
+
+- [Google Translate](https://translate.google.com/ "Link to Google Translate"): Checking the grammar when needed after translating from Spanish to English.
+
+- [Coolors](https://coolors.co/ "Link to Coolors"): Program used to check compability of color of the blog.
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/ "Link to developer tools page"): Used to test the response on different screen sizes, debugging and to generate a Lighthouse report to analyze page load.
+
+- [HTML Validator](https://validator.w3.org/): Used to check the code for HTML validation.
+
+- [W3 CSS Validator](https://jigsaw.w3.org/css-validator/): Used to check the code for CSS validation.
+
+- [Unsplah](www.unsplash.com "Link to the home page"): Used image for the blog.
+
+- [Pexels](www.pexels.com "Link to the home page"): Used image for the blog.
 
 ## Testing
+
+### Browser Testing
+
+    I have tested that this application works using Mackboor Air(Retina, 13-inch, 2020), with macOS Monterey 12.6 installed, using the following browsers.
+
+    * Safari Version 16.0 (17614.1.25.9.10, 17614) 
+    * Google Version 105.0.5195.125 (Official Build) (arm64)
+
+### Responsivness
+
+    * I have tested that this website works on different screen sizes from iPhone 5(320px wide) and larger screens (5120 x 2880 px).
+
+### Validator Testing
+
+#### W3C Markup Validator: 
+
+The W3C Markup Validator were used to validate the HTML on all pages of the project to ensure there were no syntax errors in there.
+
+Index page:
+
+Base page:
+
+About page:
+
+Add Recipe page:
+
+Recipe Detail page:
+
+Update Recipe page:
+
+#### W3C CSS Validator:
+
+The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors in there.
+
+
+### PEP8 Online:
+
+Python Validator was used to validate all the .py files to ensure there were no errors in there.
+
+* admin.py
+
+* forms.py
+
+* models.py
+
+* test_forms.py
+
+* test_models.py
+
+* test_views.py
+
+* urls.py
+
+* views.py
+
+### Lighthouse
+
+### Automated testing
+
+Django TestCase was used to create automatic tests for Python files. The test reporting tool ’Coverage’ was installed to show the percentage of Python code that’s been covered by tests.
+
+The tests were written on the next files:
+
+* test_form.py
+* test_models.py
+* test_views.py
+
+Coverage test result:
 
 ## Deployment
 
@@ -323,10 +527,26 @@ When you clone a repository, you copy the repository from GitHub.com to your loc
 
 ## Credits
 
-### Content
+* Code Institute Tutor Support: for helping me when I couldn't do it by myself.
 
-### Media
+* Code Institute: Walkthrough modules in Full Stack Frameworks.
+
+* Code Institute Slack Community: For troubleshooting and FAQ.
+
+*  [Very Academy](https://www.youtube.com/watch?v=GBgRMdjAx_c&t=353s): Django Testing - Model Introduction.
+
+* Django documentation: For clarifying all the doubts
+
+* Stack Overflow: For troubleshooting and FAQ.
 
 ### Code
 
+* Code for testing the number of likes of a recipe was from [Very Academy](https://youtu.be/GBgRMdjAx_c?t=974) at minute 16:14.
+
+![Image from the code](path)
+
 ## Acknowledgements
+
+* My mentor at Code Institute, Brian Macharia, for code review, help and feedback.
+
+
