@@ -21,11 +21,9 @@
 
 3. [Features](#Features)
 
-	A. [Design Features](#Design-Features)
+	A. [Existing Features](#Existing-Features)
 
-	B. [Existing Features](#Existing-Features)
-
-	C. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+	B. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 
 4. [Issues and Bugs](#Issues-and-bugs)
 
@@ -62,9 +60,9 @@
 
 ## Introduction
 
-My mommy and me blog was designed to displayed simple recipes for parents with their children. The site's focus is to allow users to share their recipes and experiences for other users to read and use. I got the inspiration in my 4-years-old daughter, she doesn't go to preschool once a month, and she calls our time together: "My mommy and me".
+My mommy and me blog was designed to displayed simple recipes for parents with their children. The site's goal is to allow users to share their recipes and experiences for other users to read and use. I got the inspiration in my 4-years-old daughter, she doesn't go to preschool once a month, and she calls our time together: "My mommy and me".
 
-Users will also be able to comment on recipes, and upload their own images. They can like or unlike the recipe.
+Users will also be able to comment on recipes, and upload their own images. They can like or unlike the recipe. And they will have the CRUD functionality to post recipes, so they can Create, Read, Update and Delete.
 
 This is the fourth of five projects for completing the Full Stack Software Development program at the Code Institute.
 
@@ -175,22 +173,78 @@ To match the color scheme, the default images for the recipes and the hero image
 
 ## Features
 
-### Design Features
-
-
 ### Existing Features
 
-- **Header Logo**
+- **Navigation Bar**
 
-- **Header Navigation Bars**
+The navbar is presented on all the pages of the site. When the user scrolls, it will remain to the top because it uses a bootstrap's built-in class sticky-top.
+On the left-hand side of the navbar is presented the name of the blog: 'My mommy & me' that redirects the user to the home page.
+On the right-hand side is presented the navigation links: About, Register and Login. And if the user is logged in, it will be added the 'Add Recipe' link.
 
-- **Header Image**
+* Not logged in: About, Register, Login
 
-- **Social Icons**
+![Not logged in navbar](path)
 
-- **Recipe Cards**
+* Logged in: About, Logout, Add Recipe
 
-- **Recipe Form**
+![Logged in navbar](path)
+
+The navbar is fully responsive, on the smaller devices the navbar will collapse and the navigation links are accessed using a "hamburger menu".
+
+* Hamburger menu
+
+![Hamburger menu](path)
+
+- **Home page:**
+
+Home page - Hero section:
+
+At the top of the page is positionated the hero image, that shows a mom with her daughter cooking together. This is the first visible image to the user. The image is responsive, and it was selected because it represents the goal of the blog. This image is only shown on the home page and in the about page.
+
+![Hero image ](path)
+
+Home page - Recipe posts:
+
+On this section, cards with the main information is displayed to the user. Only is shown 6 cards, and if another recipe is added, it shows a site pagination at the bottom of the section.
+
+![Recipe list ](path)
+
+Home page - Recipe Cards:
+
+Each card has the same style: On the top is an image that can be uploaded by the user, or if the user forgets or doesn't have an image, a default image is shown. Then, it ocmes the title of the recipe, the author, and a small description. And at the bottom, it is the date when the post was created or updated, and the number of likes.
+
+* Card with the chosen image by the user:
+
+![Card with uploaded image](path)
+
+* Card with the default image:
+
+![Card with default image](path)
+
+Home page - Site Pagination:
+
+The home page has a limit of 6 posts, if more posts are added, it will appear a pagination nabvar telling in what page is the user, and links for going to the next page or the previous one.
+
+![Site Pagination](path)
+
+Home page - Footer:
+
+This section has the social media icons from Font Awewsome: Facebook, Twiter, Instagram, and Youtube. Each icon redirects to their respective home page in a new tab. 
+
+![Footer with social media icons](path)
+
+- **About page:**
+
+This section is very similar to the home page, but instead of showing a list of recipes for the main content, it is shown a small description about the blog and how the user can be part of it.
+
+![about section with the main information](path)
+
+- **Add Recipe:**
+
+After the user is logged in, he has a link on the navbar for adding a recipe. If he clicks on this link, he will be redirected to the 
+
+If the user isn't logged in, but knows the URL for this action, a message is shown as a reminder to login or sign up.
+
 
 - **Comment Form**
 
@@ -198,9 +252,6 @@ To match the color scheme, the default images for the recipes and the hero image
 
 - **Like/Unlike Button**
 
-- **Home Page**
-
-- **About Page**
 
 - **Recipe Page**
 
