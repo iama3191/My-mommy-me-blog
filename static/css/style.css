@@ -154,7 +154,8 @@ footer p {
 .comments-container,
 .update-container,
 .account-container,
-.warning-message {
+.warning-message,
+.about-container {
     background-color: rgb(248, 249, 250, 0.8);
     padding-top: 20px;
     padding-bottom: 20px;

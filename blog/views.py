@@ -18,7 +18,7 @@ def about(request):
 
 def add_recipe(request):
     """
-    Renders add a recipe page 
+    Renders 'add a recipe' page 
     """
     recipe_form = RecipeForm(request.POST or None, request.FILES or None)
     context = {
