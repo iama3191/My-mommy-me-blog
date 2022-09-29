@@ -153,12 +153,8 @@ The user will be able to:
 #### Color Scheme
 The colors were chosen for a soft look of the website and focusing mainly on the images. The terra cotta gives a warm sensation and the cultured color gives a clean and clear sensation without overwhelming the user.
 
-![Color scheme from Coolors](path)
-
 #### Typography
 The font chosen for the heading tags was 'Architects Daughter' as it is a cool and soft typography, and for the rest of the text was 'Open Sans' as it is clear and concise for big texts.
-
-![Typograpy from Google Fonts](path)
 
 #### Imagery
 To match the color scheme, the default images for the recipes and the hero image were chosen to complement each other. The images were selected from [Pexels](www.pexels.com) and [Unsplash](www.unsplash.com).
@@ -169,13 +165,6 @@ To match the color scheme, the default images for the recipes and the hero image
 
 The project is hosted on Heroku and the database used is Heroku PostreSQL. Cloudinary is used to store all the images. Two custom models were created for the project: Recipe and Comment. This models were modified from the Walkthrough project from Code Institute 'I Think Therefor I blog'.
 
-Entity relationship Diagram - Recipe
-
-![Relationship Diagram for Recipe](path)
-
-Entity relationship Diagram - Comment
-
-![Relationship Diagram for Recipe](path)
 
 ## Features
 
@@ -189,9 +178,9 @@ On the right-hand side is presented the navigation links: About, Register and Lo
 
 * Not logged in: About, Register, Login
 
-![Not logged in navbar](path)
+![Not logged in navbar](media/navbar-before-login.png)
 
-* Logged in: About, Logout, Add Recipe
+* Logged in: About, Logout, Add Recipe, User Name
 
 ![Logged in navbar](path)
 
@@ -199,7 +188,7 @@ The navbar is fully responsive, on the smaller devices the navbar will collapse 
 
 * Hamburger menu
 
-![Hamburger menu](path)
+![Hamburger menu](media/navbar-user-is-logged-in.png)
 
 - **Home page:**
 
@@ -207,43 +196,40 @@ Home page - Hero section:
 
 At the top of the page is positionated the hero image, that shows a mom with her daughter cooking together. This is the first visible image to the user. The image is responsive, and it was selected because it represents the goal of the blog. This image is only shown on the home page and in the about page.
 
-![Hero image ](path)
+![Hero image ](media/home-page-hero-image.png)
 
 Home page - Recipe posts:
 
 On this section, cards with the main information is displayed to the user. Only is shown 6 cards, and if another recipe is added, it shows a site pagination at the bottom of the section.
 
-![Recipe list ](path)
+![Recipe list ](media/home-page-recipe-list.png)
+
+![Recipe list ](media/home-page-recipe-list-small-screens.png)
 
 Home page - Recipe Cards:
 
 Each card has the same style: On the top is an image that can be uploaded by the user, or if the user forgets or doesn't have an image, a default image is shown. Then, it ocmes the title of the recipe, the author, and a small description. And at the bottom, it is the date when the post was created or updated, and the number of likes.
 
-* Card with the chosen image by the user:
+* Default image:
 
-![Card with uploaded image](path)
-
-* Card with the default image:
-
-![Card with default image](path)
+![Default image](media/food.jpg)
 
 Home page - Site Pagination:
 
 The home page has a limit of 6 posts, if more posts are added, it will appear a pagination nabvar telling in what page is the user, and links for going to the next page or the previous one.
 
-![Site Pagination](path)
 
 Home page - Footer:
 
 This section has the social media icons from Font Awewsome: Facebook, Twiter, Instagram, and Youtube. Each icon redirects to their respective home page in a new tab. 
 
-![Footer with social media icons](path)
+![Footer with social media icons](media/footer-social-media-links.png)
 
 - **About page:**
 
 This section is very similar to the home page, but instead of showing a list of recipes for the main content, it is shown a small description about the blog and how the user can be part of it.
 
-![about section with the main information](path)
+![about section with the main information](media/about-section.png)
 
 - **Add Recipe:**
 
@@ -260,7 +246,7 @@ The form has the next required fields to submit the recipe:
 
 If the user isn't logged in, but knows the URL for this action, a message is shown as a reminder to login or sign up.
 
-![Add recipe form from Summernote](path)
+![Add recipe form from Summernote](media/add-recipe-editor.png)
 
 - **Recipe detail page:**
 
@@ -271,16 +257,18 @@ If the user is interested on a recipe from the home page, by clicking on the tit
 * The instruction section is next.
 * Finally, two buttons will appear:  a like/ unlike button and the number of comments button.
 
-![Recipe detail page](path)
+![Recipe detail page](media/recipe-detail-page-section.png)
+
+![Recipe detail page: instructions](media/recipe-detail-page-section-ingredients-and-instructions.png)
 
 If the user is logged in:
 * The user can toggle on the empty heart button for liking a recipe.
 
-![User likes a recipe](path)
+![User likes a recipe](media/icons-like-and-comments.png)
 
 * The user can toggle on the full heart button for unliking a recipe.
 
-![User unlikes a recipe](path)
+![User unlikes a recipe](media/empty-heart.png)
 
  Recipe detail page - Comment section:
 
@@ -289,17 +277,15 @@ If the user is logged in:
  * Then is the name of the author.
  * The content of the comment.
 
- ![Comment section](path)
-
  If the user is logged in:
  * It will appear a textarea for commenting, in case the user wants.
 
- ![Leave a comment textarea](path)
+ ![Leave a comment textarea](media/recipe-detail-page-section-comments.png)
 
  If the user isn't logged in:
  * It will only appear all the previous comments, and the textarea for commenting is not shown.
 
-  ![Comment section](path)
+  ![Comment section](media/recipe-detail-page-comment-section-posted.png)
 
  Recipe detail page - Update and delete recipe:
 
@@ -308,12 +294,10 @@ If the user is logged in:
  * The Update button redirects the user to the update recipe page for any modification.
  * The Delete button redirects the user to a confirmation of action.
 
-  ![Update and delete buttons](path)
+  ![Update and delete buttons](media/recipe-detail-page-for-updating-and-deleting.png)
 
   If the user isn't logged in and isn't the author of the recipe:
   * The buttons are not displayed.
-
-  ![Section without the ability for modifying](path)
 
  - **Update Recipe Page**
  On this page, only the owner of the post can make any modification to it, it will show the same form from Summernote with all the fields pre-populated.
@@ -321,7 +305,7 @@ After the user modify whatever he wants and submits the recipe, it will be redir
 
 * If the user didn't update succesfully:
 
-    ![Warning from the incorrect field](path)
+    ![Warning from the incorrect field](media/validation-for-required-fields-warning-mssg.png)
 
 - **Sign Up Page**
 To interact with the blog, the user is required to register and login. If the user is not registered, it will be reminded to do it in multiple ways, and he can be redirected by many links on the site.
@@ -337,7 +321,7 @@ A new account is created easily. The user needs to complete the following inform
 * E-mail: optional.
 * Password: Which must be entered twice.
 
-![Register form](path)
+![Register form](media/sign-up.png)
 
 When the user completes all the fields and if the information is valid, the account is created and he's redirected to the Home page.
 
@@ -355,7 +339,7 @@ After the user is registered, the login process is quickly. The user needs to co
 * Valid username.
 * Correct password.
 
-![Login form](path)
+![Login form](media/sign-in.png)
 
 If the user wants, he can ask to be rememeber and avoid repeating the login process. Afrer he submits the information and if it's valid, he will be redirected to the Home page.
 
@@ -363,7 +347,7 @@ If the user wants, he can ask to be rememeber and avoid repeating the login proc
 
 The Logout page can be accessed by the navbar link on every page after the user is logged in. When the user clicks on it, he will be redirected to the Logout page for confirming the action. If the user accepts the process, he will go to the Home page, otherwise he will go to the previous page visited.
 
-![Logout form](path)
+![Logout form](media/sign-out.png)
 
 ### Features to Implement in the future
 
@@ -379,9 +363,10 @@ The Logout page can be accessed by the navbar link on every page after the user 
 
 ## Issues and Bugs
 
-**Bug:**
+**Bug:** The add recipe page and the update recipe page uses the Summernote editor where the instructions and ingredients fields have the toolbar for editing; and for small screens, these containers don't get smaller and create an overflow in the page. This bug it wasn't fixed because the developer run out of time.
 
-- **Solution:**
+![Bug from the note editor from Summernote](media/note-editor-bug.png)
+
 
 ## Technologies Used
 
@@ -451,17 +436,37 @@ The Logout page can be accessed by the navbar link on every page after the user 
 
 The W3C Markup Validator were used to validate the HTML on all pages of the project to ensure there were no syntax errors in there.
 
-Index page:
+Home page
 
-Base page:
+![Validation home page](media/html-validator-home-page.png)
 
 About page:
 
+![Validation about page](media/html-validator-about-page.png)
+
 Add Recipe page:
+
+![Validation add recipe page](media/html-validator-add-recipe-page.png)
 
 Recipe Detail page:
 
+![Validation recipe detail page](media/html-validator-recipe-detail-page.png)
+
 Update Recipe page:
+
+![Validation recipe detail page](media/html-validator-update-recipe-page.png)
+
+Login page:
+
+![Validation login page](media/html-validator-login-page.png)
+
+Sign up page:
+
+![Validation sign up page](media/html-validator-sign-up-page.png)
+
+Logout page:
+
+![Validation logout page](media/html-validator-logout-page.png)
 
 #### W3C CSS Validator:
 
@@ -628,6 +633,8 @@ Once code changes have been completed and tested on localhost, the application c
 * Django documentation: For clarifying all the doubts
 
 * Stack Overflow: For troubleshooting and FAQ.
+
+* Recipes are from https://www.bbcgoodfood.com/recipes/vintage-chocolate-chip-cookies
 
 ### Code
 
