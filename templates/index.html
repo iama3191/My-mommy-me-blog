@@ -22,9 +22,9 @@
             <div class="image-container">
               {% if "placeholder" in recipe.featured_image.url %}
               <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg"
-                class="card-img-top recipe-img">
+                class="card-img-top recipe-img" alt="cooking on a pan red vegetables with a wooden spoon">
               {% else %}
-              <img src="{{ recipe.featured_image.url }}" class="card-img-top recipe-img">
+              <img src="{{ recipe.featured_image.url }}" class="card-img-top recipe-img" alt="...">
               {% endif %}
             </div>
             <div class="card-body">
@@ -73,4 +73,6 @@
       {% endif %}
     </div>
   </div>
+
+</div>
   {% endblock %}

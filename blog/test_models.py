@@ -1,3 +1,6 @@
+"""
+Imports for testing the models
+"""
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Recipe, Comment
@@ -12,20 +15,20 @@ class TestAppModels(TestCase):
         """
         Create data for testing
         """
-        self.user = User.objects.create(username='testname')
-        self.user.set_password('secret_password')
+        self.user = User.objects.create(username="testname")
+        self.user.set_password("secret_password")
         self.user.save()
 
         self.recipe = Recipe.objects.create(
-            title='test recipe',
-            slug='test-recipe',
+            title="test recipe",
+            slug="test-recipe",
             author=self.user,
         )
 
         self.comment = Comment.objects.create(
             recipe=self.recipe,
             name=self.user,
-            body='test comment',
+            body="test comment",
         )
 
     def test_recipe_model_str_returns_name(self):
@@ -54,17 +57,17 @@ class TestAppModels(TestCase):
         Test default value for the comment status
         """
         self.assertTrue(self.recipe.status == 0)
-        
+
     def test_recipe_like_user(self):
         """Test likes counting"""
         testuser = User.objects.create_user(
-            username='user1', password='12345'
+            username="user1", password="12345"
         )
         testuser2 = User.objects.create_user(
-            username='user2', password='123456'
+            username="user2", password="123456"
         )
         title = Recipe.objects.create(
-            title='cake', author=self.user
+            title="cake", author=self.user
         )
         title.likes.set([testuser.pk, testuser2.pk])
         self.assertEqual(title.likes.count(), 2)

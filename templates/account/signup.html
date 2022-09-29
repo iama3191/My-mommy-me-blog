@@ -2,19 +2,19 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block content %}
 {% block title %}
 <title>My mommy & me|Sign up</title>
 {% endblock %}
+
+{% block content %}
 
 <div class="container account-container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2 text-center">
       <h3>{% trans "Sign Up" %}</h3>
 
-      <p>{% blocktrans %}Already have an account? Then please <a class="signin-link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+      <p>{% blocktrans %}Already have an account? Then please <a class="signin-link" href="{{ login_url }}">sign
+          in</a>.{% endblocktrans %}</p>
 
       <form class="signup" id="signup_form" method="POST" action="{% url 'account_signup' %}">
         {% csrf_token %}

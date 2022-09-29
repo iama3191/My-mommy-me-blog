@@ -33,6 +33,10 @@ html {
     color: #000;
   }
   
+  .user-link {
+    color: #565e64;
+  }
+
   .btn-add-recipe {
     color: #d27560;
   }
@@ -176,6 +180,7 @@ html {
   
   .recipe-detail-img img {
     max-width: 100%;
+    width: 80%;
   }
   
   .recipe-detail-img {

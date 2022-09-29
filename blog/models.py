@@ -1,3 +1,6 @@
+"""
+Import for Creating a data model
+"""
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -17,15 +20,15 @@ class Recipe(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     ingredients = models.TextField()
     instructions = models.TextField(default="")
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField("image", default="placeholder")
     description = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
 
     class Meta:
         """Sets the order of comments by date ascending"""
-        ordering = ['-created_on']
+        ordering = ["-created_on"]
 
     def __str__(self):
         """Return the title of the recipe"""
@@ -41,7 +44,7 @@ class Comment(models.Model):
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        related_name='comments'
+        related_name="comments"
         )
     name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -51,7 +54,7 @@ class Comment(models.Model):
 
     class Meta:
         """Sets the order of comments by date ascending"""
-        ordering = ['created_on']
+        ordering = ["created_on"]
 
     def __str__(self):
         """Returns comment with body and name"""

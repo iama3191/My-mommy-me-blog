@@ -1,11 +1,14 @@
 {% extends "base.html" %}
-{% block content %}
-{% load crispy_forms_tags %}
 
 <!-- Blog title -->
 {% block title %}
 <title>My mommy & me|{{ recipe.title }}</title>
 {% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
 
 <!-- Recipe Details -->
 <div class="container recipe-container text-center">
@@ -15,10 +18,9 @@
   <div class="recipe-summary">
     <div class="recipe-detail-img">
       {% if "placeholder" in recipe.featured_image.url %}
-      <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg"
-        width="80%">
+      <img src="https://res.cloudinary.com/irecloudpractice/image/upload/v1663061761/placeholder-img_zkcm8c.jpg" alt="cooking on a pan red vegetables with a wooden spoon">
       {% else %}
-      <img src="{{ recipe.featured_image.url }}" width="80%">
+      <img src="{{ recipe.featured_image.url }}" alt="...">
       {% endif %}
     </div>
     <div class="recipe-detail-desc">
@@ -30,7 +32,7 @@
   <hr>
   <div class="row">
     <h3>Ingredients</h3>
-    <p> {{ recipe.ingredients | safe }}</p>
+    {{ recipe.ingredients | safe }}
   </div>
   <div class="row">
     <h3>Instructions</h3>

@@ -49,6 +49,9 @@
           <li class="nav-item ">
             <a class="nav-link btn-add-recipe" href="{% url 'add_recipe' %}" role="button">Add recipe</a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link  user-link" href="#"><i class="fa-solid fa-user me-2"></i>{{ user }}</a>
+          </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
