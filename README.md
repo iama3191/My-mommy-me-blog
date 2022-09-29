@@ -425,6 +425,8 @@ I have tested that this application works using Mackboor Air(Retina, 13-inch, 20
 * Safari Version 16.0 (17614.1.25.9.10, 17614) 
 * Google Version 105.0.5195.125 (Official Build) (arm64)
 
+On both browsers, the app keeps functionality without any problem.
+
 ### Responsivness
 
 * I have tested that this website works on different screen sizes from iPhone 5(320px wide) and larger screens (5120 x 2880 px).
@@ -500,6 +502,34 @@ But all the .py files where validated by hand, and using the terminal for proble
 
 
 ### Lighthouse
+
+The Lighthouse performance tests were mande on an incognito tab for Google's recommnedation.
+
+The tests' criterias were:
+
+* Performance
+* Accessibility
+* Best Practice
+* SEO
+
+* Desktop test 
+
+All criterias were passed with more than 90%.
+
+![Lighthouse performance on desktop view](media/desktop-performance-lighthouse.png)
+
+* Mobile test
+
+I did two tests for this option, the first one had a performance score of 76%, where after reading the message I couldn't find a solution, so I tested on a Samnsung Galaxy A32, and it worked perfectly without any problem, then I repeat the test and all the criterias were passed with more than 90%.
+
+* First Test
+
+![Lighthouse performance on mobile view: 1st attempt](media/1-st-mobile-lighthouse-performance.png)
+
+* Second Test
+
+![Lighthouse performance on mobile view: 2nd attempt](media/2-nd-mobile-lighthouse-performance.png)
+
 
 ### Automated testing
 
@@ -646,7 +676,7 @@ Once code changes have been completed and tested on localhost, the application c
 
 * Code for testing the number of likes of a recipe was from [Very Academy](https://youtu.be/GBgRMdjAx_c?t=974) at minute 16:14.
 
-![Image from the code](path)
+![Image from the code](media/code-used-test-models.png)
 
 ## Acknowledgements
 
