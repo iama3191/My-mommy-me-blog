@@ -21,6 +21,10 @@ class TestViews(TestCase):
             title='test recipe',
             slug='test-recipe',
             author=self.user,
+            ingredients='ingredients1',
+            instructions='instructions1',
+            description='Some content',
+            status=1
         )
 
         self.comment = Comment.objects.create(
@@ -33,27 +37,27 @@ class TestViews(TestCase):
         """
         Test about retrieval and correct template used
         """
-        response = self.client.get('/about/')
+        response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'about.html')
 
     def test_get_recipe_list_page(self):
         """Test blog retrieval and correct template used"""
-        response = self.client.get('/')
+        response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html', 'index.html')
 
     def test_get_add_recipe_page(self):
         """Test blog retrieval and correct template used"""
-        response = self.client.get('/add_recipe/')
+        response = self.client.get(reverse('add_recipe'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'add_recipe.html')
 
     def test_get_update_recipe_page(self):
         """Test blog retrieval and correct template used"""
-        # recipe = Recipe.objects.create(name='Test recipe')
         response = self.client.get(f'/update_recipe/{self.recipe.slug}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'update_recipe.html')
+
 
 
