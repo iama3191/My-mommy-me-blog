@@ -1,7 +1,6 @@
 
 # My mommy and me blog
 
-![Responsive display of the blog](path)
 
 [View the live project here](https://my-mommy-and-me.herokuapp.com/ "Link to deployed link - My mommy and me blog")
 
@@ -421,20 +420,21 @@ The Logout page can be accessed by the navbar link on every page after the user 
 
 ### Browser Testing
 
-    I have tested that this application works using Mackboor Air(Retina, 13-inch, 2020), with macOS Monterey 12.6 installed, using the following browsers.
+I have tested that this application works using Mackboor Air(Retina, 13-inch, 2020), with macOS Monterey 12.6 installed, using the following browsers.
 
-    * Safari Version 16.0 (17614.1.25.9.10, 17614) 
-    * Google Version 105.0.5195.125 (Official Build) (arm64)
+* Safari Version 16.0 (17614.1.25.9.10, 17614) 
+* Google Version 105.0.5195.125 (Official Build) (arm64)
 
 ### Responsivness
 
-    * I have tested that this website works on different screen sizes from iPhone 5(320px wide) and larger screens (5120 x 2880 px).
+* I have tested that this website works on different screen sizes from iPhone 5(320px wide) and larger screens (5120 x 2880 px).
 
 ### Validator Testing
 
 #### W3C Markup Validator: 
 
-The W3C Markup Validator were used to validate the HTML on all pages of the project to ensure there were no syntax errors in there.
+The W3C Markup Validator were used to validate the HTML on all pages of the project to ensure there were no syntax errors in there. 
+All the results didn't show any error except for the 'Add recipe' and 'Update recipe' pages, after reading the warning messages, it seems that all came with the Summernote editor: the applied style on the html tags.
 
 Home page
 
@@ -472,10 +472,15 @@ Logout page:
 
 The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors in there.
 
+![Validation css file](media/css-validator.png)
 
 ### PEP8 Online:
 
-Python Validator was used to validate all the .py files to ensure there were no errors in there.
+Python Validator wasn't used to validate all the .py files to ensure there were no errors in there, because the domain has expired.
+
+![pep8 online has expired domain](media/pyhton-domain.png)
+
+But all the .py files where validated by hand, and using the terminal for problems. After solving all the errrors, there it's only left warning messages that don't affect the performance of the code.
 
 * admin.py
 
@@ -493,6 +498,7 @@ Python Validator was used to validate all the .py files to ensure there were no 
 
 * views.py
 
+
 ### Lighthouse
 
 ### Automated testing
@@ -501,11 +507,11 @@ Django TestCase was used to create automatic tests for Python files. The test re
 
 The tests were written on the next files:
 
-* test_form.py
-* test_models.py
-* test_views.py
+* test_forms.py check in [here](https://github.com/iama3191/PP4-CI/blob/main/blog/test_forms.py)
+* test_models.py check in [here](https://github.com/iama3191/PP4-CI/blob/main/blog/test_models.py)
+* test_views.py check in [here](https://github.com/iama3191/PP4-CI/blob/main/blog/test_views.py)
 
-Coverage test result:
+Coverage test result: After writing 10 tests, the coverage only got to 70% and didn't keep updating even though, every test is passed.
 
 ## Deployment
 
