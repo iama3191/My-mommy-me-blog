@@ -181,13 +181,13 @@ On the right-hand side is presented the navigation links: About, Register and Lo
 
 * Logged in: About, Logout, Add Recipe, User Name
 
-![Logged in navbar](path)
+![Logged in navbar](media/navbar-user-is-logged-in.png)
 
 The navbar is fully responsive, on the smaller devices the navbar will collapse and the navigation links are accessed using a "hamburger menu".
 
 * Hamburger menu
 
-![Hamburger menu](media/navbar-user-is-logged-in.png)
+![Hamburger menu](media/navbar-hamburger-menu.png)
 
 - **Home page:**
 
